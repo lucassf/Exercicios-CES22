@@ -1,0 +1,5 @@
+A superclasse permite o agrupamento dos métodos e campos que são comuns a todas as suas subclasses, evitando assim repetição
+de linhas de código. O arquivo 'Exercício 2.java' contem as classes 'Main', 'Shape' e duas subclasses de 'Shape': 'Square' e
+'Triangle'. Nota-se que no método 'main' não foi necessário fazer um 'casting' para acessar os métodos 'Area' e 'getName' do array
+'shapes'. Isto porque estes métodos são comuns tanto a superclasse 'Shape' quanto as suas subclasses. Assim, caso seja necessário
+criar uma nova subclasse de 'Shape', não será necessário modificações dentro do loop for.
