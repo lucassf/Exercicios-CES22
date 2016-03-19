@@ -1,0 +1,10 @@
+O arquivo 'Calculadora.java'contém métodos e variáveis para realizar cálculos matemáticos simples. A classe 'Main.java' permite a
+comunicação entre o 'input' do usuário e a classe 'Calculadora.java'. Cada entrada consiste em um caractere ou número real por linha.
+Os caracteres permitidos são:
+
+- '+', '-', '*', 'x', '/': representam a operação a ser realizada
+- '=': mostra na saída o número guardado na memória com uma casa decimal de precisão (o resultado das operações)
+- 'c': limpa o número da memória e o iguala a 0
+- 's': fecha o programa
+
+Mais detalhes no wiki.
