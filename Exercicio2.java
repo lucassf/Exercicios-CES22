@@ -92,7 +92,7 @@ class Triangle extends Shape {
     }
 }
 
-class Main {
+class Exercicio2 {
 
     public static void main(String[] args) {
         Triangle t1 = new Triangle("T1");
