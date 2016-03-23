@@ -55,7 +55,7 @@ class Calculator {
     }
 }
 
-public class Main {
+public class Exercicio1 {
     
     private static Calculator calculator;
     private static Scanner sc;
