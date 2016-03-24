@@ -6,9 +6,7 @@ class Time {
     private int minute;
 
     public Time() {
-    }
-
-    ;
+    };
 
     public int getHour() {
         return hour;
