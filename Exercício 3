@@ -1,0 +1,3 @@
+Encapsulando as variáveis da classe 'Time' não há mais a possibilidade de acessá-las diretamente de uma classe externa.
+Isto evita que elas sejam modificadas por uma classe que não possui autorização para tal, além de facilitar a leitura do
+código.
