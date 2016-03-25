@@ -1,0 +1,6 @@
+O código da calculadora (desenvolvida no primeiro exercício) foi alterado de modo a incluir encapsulamento de
+métodos e variáveis e tratamento de exceções. Duas novas classes foram criadas: 'WrongInputException' que extende
+'Exception' e é responsável por mostrar uma mensagem de erro quando a entrada do usuário é inválida; e 'InputHandler'
+que trata esta excessão. A classe 'Calculator' foi modificada para verificar se ocorre uma divisão por zero. O modo 
+como o usuário entra com os comandos não será mais controlado pela classe 'Main' e sim por 'InputHandler'. Além disto,
+a classe 'Main' tratará as duas possíveis exceções: entrada inválida e divisão por zero.
