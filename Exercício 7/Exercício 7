@@ -1,0 +1,26 @@
+﻿O código da calculadora (desenvolvida no primeiro exercício e aprimoridado no quarto) foi alterado de modo que foi
+criada uma tela onde o usuário pode fazer suas operações. Nela é possível inserir digítos (0-9), ponto (denotando 
+casa decimal), operação (+,-,x,/) e solicitar o resultado (=), mudança de sinal (+/-) ou limpeza da memória (C). Para
+sair basta clicar no X. Um visor mostra a entrada do usuário/saída do programa.
+
+Alterações nas classes:
+
+'Calculator': Criou-se um enum para descrever as operações (ao invés de utilizar caracteres); 
+Um único método ('changeOperation(Operation op)')seta qual operação será realizada; 
+O retorno do método getAns() é uma String que pode representar um inteiro ou double, dependedo se a saída for um número
+inteiro ou não respectivamente;
+Caso seja feita a operação 0/0 o visor exibe "Indeterminado"; Caso ocorra x/0, com x!=0, o visor exibe "Infinito".
+
+'WrongInputException': Nenhuma mudança
+
+'InputHandler': A String 'input' contém somente o número fracionário ou não, que está sendo inserido pelo usuário;
+Foi criada uma variável booleana 'signed' que indica o sinal da entrada; 
+A função setInput contem um char 'a' como parâmetro que indica: a = 'u' - deletar o último dígito inserido, 
+a = '-' - inverter o sinal de entrada, a = dígito de '0' a '9' ou '.' - tenta adicionar esse dígito ou o ponto a 
+variavel 'input';
+Criou-se o método ResetInput() que reseta os valores de 'input' e 'signed' para "0" e false respectivamente;
+O método 'VerifyInput(String input)' agora somente retorna uma exceção se o parâmetro não for um double ou tiver
+tamanho maior que 9.
+
+'CalculatorFrame': Classe criada nesta versão e que contem a tela, o método main e é responsável pela comunicação
+com as outras classes.
