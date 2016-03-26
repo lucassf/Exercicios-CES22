@@ -23,6 +23,7 @@ public class CalculatorFrame extends javax.swing.JFrame {
         }
         if (currentaction != CurrentAction.DIGIT) {
             inputhandler.ResetInput();
+            if (digit=='u')calculator.clear();
         }
         inputhandler.setInput(digit);
         currentaction = CurrentAction.DIGIT;
