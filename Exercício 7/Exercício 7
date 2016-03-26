@@ -13,7 +13,7 @@ Caso seja feita a operação 0/0 o visor exibe "Indeterminado"; Caso ocorra x/0,
 
 'WrongInputException': Nenhuma mudança
 
-'InputHandler': A String 'input' contém somente o número fracionário ou não, que está sendo inserido pelo usuário;
+'InputHandler': A String 'input' contém somente o número, fracionário ou não, que está sendo inserido pelo usuário;
 Foi criada uma variável booleana 'signed' que indica o sinal da entrada; 
 A função setInput contem um char 'a' como parâmetro que indica: a = 'u' - deletar o último dígito inserido, 
 a = '-' - inverter o sinal de entrada, a = dígito de '0' a '9' ou '.' - tenta adicionar esse dígito ou o ponto a 
