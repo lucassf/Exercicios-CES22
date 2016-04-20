@@ -1,7 +1,7 @@
 ﻿O código da calculadora (desenvolvida no primeiro exercício e aprimoridado no quarto) foi alterado de modo que foi
 criada uma tela onde o usuário pode fazer suas operações. Nela é possível inserir digítos (0-9), ponto (denotando 
-casa decimal), operação (+,-,x,/) e solicitar o resultado (=), mudança de sinal (+/-) ou limpeza da memória (C). Para
-sair basta clicar no X. Um visor mostra a entrada do usuário/saída do programa.
+casa decimal), operação (+,-,x,/) e solicitar a remoção do último dígito (Del), o resultado (=), mudança de sinal (+/-) 
+ou limpeza da memória (C). Para sair basta clicar no X. Um visor mostra a entrada do usuário/saída do programa.
 
 Alterações nas classes:
 
@@ -11,7 +11,7 @@ O retorno do método getAns() é uma String que pode representar um inteiro ou d
 inteiro ou não respectivamente;
 Caso seja feita a operação 0/0 o visor exibe "Indeterminado"; Caso ocorra x/0, com x!=0, o visor exibe "Infinito".
 
-'WrongInputException': Nenhuma mudança
+'WrongInputException': Foi deletada pois seu uso é desnecessário (substituída por um bloco if).
 
 'InputHandler': A String 'input' contém somente o número, fracionário ou não, que está sendo inserido pelo usuário;
 Foi criada uma variável booleana 'signed' que indica o sinal da entrada; 
