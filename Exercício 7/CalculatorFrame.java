@@ -2,8 +2,10 @@ package ces22;
 
 public class CalculatorFrame extends javax.swing.JFrame {
 
+    // Os botões foram dividos em quatro classes distintas: dígitos, operação,
+    // resultado e limpar. Botões pertencentes a mesma classe executam de modo
+    // basicamente igual.
     private enum CurrentAction {
-
         DIGIT, OPERATION, RESULT, CLEAR;
     };
     private final Calculator calculator;
@@ -17,6 +19,7 @@ public class CalculatorFrame extends javax.swing.JFrame {
         currentaction = CurrentAction.CLEAR;
     }
 
+    // Método chamado caso pressionado um dígito ou o botão Del
     private void DigitPressed(char digit) {
         if (currentaction == CurrentAction.RESULT) {
             calculator.clear();
@@ -30,6 +33,7 @@ public class CalculatorFrame extends javax.swing.JFrame {
         Field.setText(inputhandler.getInput());
     }
 
+    // Método chamado quando pressiona-se +/-
     private void SignalPressed(Calculator.Operation operation) {
         String answer;
         try {
@@ -47,7 +51,7 @@ public class CalculatorFrame extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         Button8 = new javax.swing.JButton();
@@ -316,87 +320,87 @@ public class CalculatorFrame extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void Button0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button0ActionPerformed
+    private void Button0ActionPerformed(java.awt.event.ActionEvent evt) {                                        
         DigitPressed('0');
-    }//GEN-LAST:event_Button0ActionPerformed
+    }                                       
 
-    private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button1ActionPerformed
+    private void Button1ActionPerformed(java.awt.event.ActionEvent evt) {                                        
         DigitPressed('1');
-    }//GEN-LAST:event_Button1ActionPerformed
+    }                                       
 
-    private void Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button2ActionPerformed
+    private void Button2ActionPerformed(java.awt.event.ActionEvent evt) {                                        
         DigitPressed('2');
-    }//GEN-LAST:event_Button2ActionPerformed
+    }                                       
 
-    private void Button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button3ActionPerformed
+    private void Button3ActionPerformed(java.awt.event.ActionEvent evt) {                                        
         DigitPressed('3');
-    }//GEN-LAST:event_Button3ActionPerformed
+    }                                       
 
-    private void Button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button4ActionPerformed
+    private void Button4ActionPerformed(java.awt.event.ActionEvent evt) {                                        
         DigitPressed('4');
-    }//GEN-LAST:event_Button4ActionPerformed
+    }                                       
 
-    private void Button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button5ActionPerformed
+    private void Button5ActionPerformed(java.awt.event.ActionEvent evt) {                                        
         DigitPressed('5');
-    }//GEN-LAST:event_Button5ActionPerformed
+    }                                       
 
-    private void Button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button6ActionPerformed
+    private void Button6ActionPerformed(java.awt.event.ActionEvent evt) {                                        
         DigitPressed('6');
-    }//GEN-LAST:event_Button6ActionPerformed
+    }                                       
 
-    private void Button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button7ActionPerformed
+    private void Button7ActionPerformed(java.awt.event.ActionEvent evt) {                                        
         DigitPressed('7');
-    }//GEN-LAST:event_Button7ActionPerformed
+    }                                       
 
-    private void Button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button8ActionPerformed
+    private void Button8ActionPerformed(java.awt.event.ActionEvent evt) {                                        
         DigitPressed('8');
-    }//GEN-LAST:event_Button8ActionPerformed
+    }                                       
 
-    private void Button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button9ActionPerformed
+    private void Button9ActionPerformed(java.awt.event.ActionEvent evt) {                                        
         DigitPressed('9');
-    }//GEN-LAST:event_Button9ActionPerformed
+    }                                       
 
-    private void PlusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlusButtonActionPerformed
+    private void PlusButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
         SignalPressed(Calculator.Operation.ADD);
-    }//GEN-LAST:event_PlusButtonActionPerformed
+    }                                          
 
-    private void MinusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MinusButtonActionPerformed
+    private void MinusButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
         SignalPressed(Calculator.Operation.SUBTRACT);
-    }//GEN-LAST:event_MinusButtonActionPerformed
+    }                                           
 
-    private void TimesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TimesButtonActionPerformed
+    private void TimesButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
         SignalPressed(Calculator.Operation.MULTIPLY);
-    }//GEN-LAST:event_TimesButtonActionPerformed
+    }                                           
 
-    private void DivisionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DivisionButtonActionPerformed
+    private void DivisionButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
         SignalPressed(Calculator.Operation.DIVIDE);
-    }//GEN-LAST:event_DivisionButtonActionPerformed
+    }                                              
 
-    private void EqualsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EqualsButtonActionPerformed
+    private void EqualsButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
         SignalPressed(Calculator.Operation.RESULT);
         currentaction = CurrentAction.RESULT;
-    }//GEN-LAST:event_EqualsButtonActionPerformed
+    }                                            
 
-    private void ClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearButtonActionPerformed
+    private void ClearButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
         calculator.clear();
         inputhandler.ResetInput();
         Field.setText("0");
         currentaction = CurrentAction.CLEAR;
-    }//GEN-LAST:event_ClearButtonActionPerformed
+    }                                           
 
-    private void DotButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DotButtonActionPerformed
+    private void DotButtonActionPerformed(java.awt.event.ActionEvent evt) {                                          
         DigitPressed('.');
-    }//GEN-LAST:event_DotButtonActionPerformed
+    }                                         
 
-    private void UndoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UndoButtonActionPerformed
+    private void UndoButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
         DigitPressed('u');
-    }//GEN-LAST:event_UndoButtonActionPerformed
+    }                                          
 
-    private void PlusMinusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlusMinusButtonActionPerformed
+    private void PlusMinusButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
         DigitPressed('-');
-    }//GEN-LAST:event_PlusMinusButtonActionPerformed
+    }                                               
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -406,7 +410,7 @@ public class CalculatorFrame extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton Button0;
     private javax.swing.JButton Button1;
     private javax.swing.JButton Button2;
@@ -427,5 +431,5 @@ public class CalculatorFrame extends javax.swing.JFrame {
     private javax.swing.JButton PlusMinusButton;
     private javax.swing.JButton TimesButton;
     private javax.swing.JButton UndoButton;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
