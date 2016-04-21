@@ -18,15 +18,20 @@ public class Calculator {
         operation = Operation.ADD;
     }
 
+    // Muda a operação a ser realizada
     public void changeOperation(Operation op) {
         operation = op;
     }
 
+    // Caso não ocorra erros, muda o valor de 'a' para 'a(operação)b', onde
+    // operação = {+,-,*,/}.
     public void changeNum(double b) throws IllegalArgumentException {
         double u = operationAns(b);
         a = u;
     }
 
+    // Retorna a string correspondente ao valor de 'a' caso a parte fracionária
+    // de a for maior que 10E-15 ou retorna '(int)a' caso contrário.
     public String getAns() {
         String ans;
         int u = (int) a;
@@ -38,6 +43,8 @@ public class Calculator {
         return ans;
     }
 
+    // Retorna o valor de 'a(operação)b' ou lança uma excessão caso ocorra
+    // divisão por zero.
     private double operationAns(double b) throws IllegalArgumentException {
         double ret = 0;
         if (operation == Operation.ADD || operation == Operation.RESULT) {
@@ -47,7 +54,7 @@ public class Calculator {
         } else if (operation == Operation.MULTIPLY) {
             ret = a * b;
         } else if (operation == Operation.DIVIDE) {
-            //Verifica se houve divisão por zero
+            //Verifica se ocorre divisão por zero
             if (b == 0) {
                 if (a == 0) {
                     throw new IllegalArgumentException("Indeterminado");
