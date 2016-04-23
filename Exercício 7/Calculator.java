@@ -8,7 +8,9 @@ public class Calculator {
     };
     private double a;
     private Operation operation;
-
+    private final double MAX_VALUE = 1.0E100;
+    private final double MIN_VALUE = 1.0E-100;
+    
     public Calculator() {
         clear();
     }
@@ -31,12 +33,13 @@ public class Calculator {
     }
 
     // Retorna a string correspondente ao valor de 'a' caso a parte fracionária
-    // de a for maior que 10E-15 ou retorna '(int)a' caso contrário.
+    // de a for maior que 1.0E-100 ou retorna '(int)a' caso contrário.
     public String getAns() {
         String ans;
         int u = (int) a;
-        if (Math.abs(a - u) < 10E-15) {
+        if (Math.abs(a - u) < MIN_VALUE) {
             ans = String.valueOf(u);
+            a=u;
         } else {
             ans = String.valueOf(a);
         }
@@ -63,6 +66,10 @@ public class Calculator {
             } else {
                 ret = a / b;
             }
+        }
+        // Verifica se a resposta ultrapassa o valor máximo permitido
+        if (ret>MAX_VALUE){
+            throw new IllegalArgumentException("Estouro");
         }
         return ret;
     }
