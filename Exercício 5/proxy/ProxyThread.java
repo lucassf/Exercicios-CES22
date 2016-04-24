@@ -1,4 +1,4 @@
-package javaapplication7;
+﻿package proxy;
 
 import java.net.*;
 import java.io.*;
@@ -7,11 +7,6 @@ public class ProxyThread implements Runnable {
 
     private final Socket clientsocket;// socket que comunica-se com o cliente
     private final Socket serversocket;// socket que comunica-se com o servidor
-
-    private final int REQUEST_MAX_SIZE = 1024; // Número máximo de bytes que pode
-    // ter uma requisição do cliente ao servidor
-    private final int REPLY_MAX_SIZE = 1024;// Número máximo de bytes que pode
-    // ter uma resposta do servidor ao client
 
     public ProxyThread(Socket socket, String hostname, int remoteport) throws IOException {
         this.clientsocket = socket;
@@ -35,11 +30,12 @@ public class ProxyThread implements Runnable {
 
     // Recebe a requisição do cliente e a envia ao servidor (upload)
     private void uploadToServer() {
-        try (InputStream from_client = clientsocket.getInputStream();
-                OutputStream to_server = serversocket.getOutputStream()){
-            byte[] request = new byte[REQUEST_MAX_SIZE];
-            while (from_client.read(request) != -1) {
-                to_server.write(request);
+        try (BufferedReader from_client = new BufferedReader(
+                        new InputStreamReader(clientsocket.getInputStream()));
+                PrintWriter to_server = new PrintWriter(serversocket.getOutputStream());){
+            String request;
+            while ((request=from_client.readLine()) != null) {
+                to_server.println(request);
                 to_server.flush();
             }
         } catch (IOException e) {
@@ -49,11 +45,12 @@ public class ProxyThread implements Runnable {
 
     // Recebe a resposta do servidor e a envia ao cliente (download)
     private void downloadFromServer() {
-        try (InputStream from_server = serversocket.getInputStream();
-                OutputStream to_client = clientsocket.getOutputStream()){
-            byte[] reply = new byte[REPLY_MAX_SIZE];
-            while (from_server.read(reply) != -1) {
-                to_client.write(reply);
+        try (BufferedReader from_server = new BufferedReader(
+                        new InputStreamReader(serversocket.getInputStream()));
+                PrintWriter to_client = new PrintWriter(clientsocket.getOutputStream());){
+            String reply;
+            while ((reply=from_server.readLine()) !=null) {
+                to_client.println(reply);
                 to_client.flush();
             }
         } catch (IOException e) {

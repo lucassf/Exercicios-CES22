@@ -1,4 +1,4 @@
-package javaapplication7;
+﻿package proxy;
 
 import java.io.*;
 import java.net.*;
@@ -28,7 +28,7 @@ public class ProxyWeb {
                 thread.start();
             }
         }catch(IOException e){
-            System.err.println("Erro na comunicação com o servidor ou cliente");
+            System.err.println("Erro na comunicação com o servidor");
         }
     }
 
