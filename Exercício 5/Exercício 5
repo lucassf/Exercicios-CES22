@@ -6,3 +6,4 @@ O número das portas que serão utilizadas e o nome do "host" são enviados como
 O proxy intermedia a comunicação entre o cliente e o servidor por meio de sockets. Ele lança o requerimento do cliente para
 o servidor. O servidor processa esse requerimento, enviando o resultado do processamento para o cliente, utilizando o proxy
 como comunicador intermediário.
+Esta aplicação foi feita utilizando-se threads de modo que mais de um cliente pode se comunicar com o servidor.
