@@ -1,0 +1,8 @@
+Um vídeo exibindo o proxy em funcionamento pode ser encontrado em: https://www.youtube.com/watch?v=pLrpZBC-oaY
+
+O código fonte para o programa proxy encontra-se na pasta /proxy. A pasta /client contem a implementação do cliente utilizada
+para testar o proxy. A pasta /server contem o servidor.
+O número das portas que serão utilizadas e o nome do "host" são enviados como parâmetros da função main.
+O proxy intermedia a comunicação entre o cliente e o servidor por meio de sockets. Ele lança o requerimento do cliente para
+o servidor. O servidor processa esse requerimento, enviando o resultado do processamento para o cliente, utilizando o proxy
+como comunicador intermediário.
