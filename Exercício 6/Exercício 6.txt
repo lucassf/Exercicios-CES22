@@ -1,16 +1,17 @@
-O soluÁ„o do problema consumidor produtor foi modificada de modo a incluir m˙ltiplos consumidores (ConsumerProducer.java).
-As alteraÁıes principais no cÛdigo foram:
+O solu√ß√£o do problema consumidor produtor foi modificada de modo a incluir m√∫ltiplos consumidores (ConsumerProducer.java).
+As altera√ß√µes principais no c√≥digo foram:
 
-main: Criou-se uma thread para cada consumidor (no mÌnimo 1 e no m·ximo 1000 consumidores).
+main: Criou-se uma thread para cada consumidor (no m√≠nimo 1 e no m√°ximo 1000 consumidores).
 
-Buffer: No mÈtodo get() foi utilizado notifyAll() no lugar de notify(). Isto pois caso haja mais de 1 consumidor e a 
-classe Reader esteja esperando notificaÁ„o pelo mÈtodo wait(), ela poder· n„o "acordar" apÛs um consumidor chamar o mÈtodo notify() (pode ocorrer de acordar um outro consumidor em espera). Com notifyAll() n„o h· esse problema.
+Buffer: No m√©todo get() foi utilizado notifyAll() no lugar de notify(). Isto pois caso haja mais de 1 consumidor e a 
+classe Reader esteja esperando notifica√ß√£o pelo m√©todo wait(), ela poder√° n√£o "acordar" ap√≥s um consumidor chamar o m√©todo notify()
+(pode ocorrer de acordar um outro consumidor em espera). Com notifyAll() n√£o h√° esse problema.
 
-Reader: ApÛs o loop while no mÈtodo run(), o caractere '\032' È adicionado ao buffer. Isto foi feito para terminar a 
+Reader: Ap√≥s o loop while no m√©todo run(), o caractere '\032' √© adicionado ao buffer. Isto foi feito para terminar a 
 leitura do buffer dos outros consumidores (evitando loop infinito).
 
 O programa foi testado para a seguinte String no arquivo texto: "abcdef". Executou-se o programa para diferentes valores 
-de consumidores e da vari·vel MAXSIZE (n˙mero m·ximo de elementos contidos no Buffer). Os resultados encontram-se abaixo:
+de consumidores e da vari√°vel MAXSIZE (n√∫mero m√°ximo de elementos contidos no Buffer). Os resultados encontram-se abaixo:
 
 MAXSIZE = 512
 Consumidores = 5
