@@ -1,0 +1,53 @@
+O solução do problema consumidor produtor foi modificada de modo a incluir múltiplos consumidores (ConsumerProducer.java).
+As alterações principais no código foram:
+
+main: Criou-se uma thread para cada consumidor (no mínimo 1 e no máximo 1000 consumidores).
+
+Buffer: No método get() foi utilizado notifyAll() no lugar de notify(). Isto pois caso haja mais de 1 consumidor e a 
+classe Reader esteja esperando notificação pelo método wait(), ela poderá não "acordar" após um consumidor chamar o método notify() (pode ocorrer de acordar um outro consumidor em espera). Com notifyAll() não há esse problema.
+
+Reader: Após o loop while no método run(), o caractere '\032' é adicionado ao buffer. Isto foi feito para terminar a 
+leitura do buffer dos outros consumidores (evitando loop infinito).
+
+O programa foi testado para a seguinte String no arquivo texto: "abcdef". Executou-se o programa para diferentes valores 
+de consumidores e da variável MAXSIZE (número máximo de elementos contidos no Buffer). Os resultados encontram-se abaixo:
+
+MAXSIZE = 512
+Consumidores = 5
+
+Consumidor #2: c
+Consumidor #1: a
+Consumidor #3: d
+Consumidor #5: b
+Consumidor #4: e
+Consumidor #2: f
+
+MAXSIZE = 2
+Consumidores = 1
+
+Consumidor #1: a
+Consumidor #1: b
+Consumidor #1: c
+Consumidor #1: d
+Consumidor #1: e
+Consumidor #1: f
+
+MAXSIZE = 2
+Consumidores = 5
+
+Consumidor #3: e
+Consumidor #3: f
+Consumidor #2: b
+Consumidor #1: a
+Consumidor #5: c
+Consumidor #4: d
+
+MAXSIZE = 1
+Consumidores = 1000
+
+Consumidor #1: a
+Consumidor #998: d
+Consumidor #1000: b
+Consumidor #999: c
+Consumidor #997: e
+Consumidor #17: f
