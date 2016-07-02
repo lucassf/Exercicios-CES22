@@ -7,3 +7,5 @@ Neste repositório estarão organizados todas os códigos dos exercícios desenv
 Vídeos:  
 [Proxy](https://www.youtube.com/watch?v=pLrpZBC-oaY)  
 [Calculadora](https://www.youtube.com/watch?v=u3brzj0WfHA)  
+[Testes](https://youtu.be/Q30B0-5h-RM)
+[DesignPatterns](https://youtu.be/I2m_9bMG6ps)
